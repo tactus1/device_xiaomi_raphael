@@ -27,7 +27,7 @@ TARGET_SCREEN_WIDTH := 1080
 TARGET_PROVIDES_POWERHAL := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := yaap_raphael
+PRODUCT_NAME := lineage_raphael
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
