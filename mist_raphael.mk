@@ -16,7 +16,7 @@ $(call inherit-product, device/xiaomi/raphael/device.mk)
 $(call inherit-product, vendor/mist/config/common_full_phone.mk)
 
 # Gapps
-TARGET_BUILD_GAPPS := false
+WITH_GAPPS := false
 
 # Boot animation
 scr_resolution := 1080
