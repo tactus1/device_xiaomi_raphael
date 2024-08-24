@@ -64,3 +64,8 @@ ro.zram.periodic_wb_delay_hours=24
 
 # Zygote
 persist.device_config.runtime_native.usap_pool_enabled=false
+
+# DroidX stuff
+ro.droidx.maintainer=Tactus
+ro.droidx.chipset=Snapdragon 855
+ro.droidx.display_resolution=6.39" Super AMOLED 1080x2340
