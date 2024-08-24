@@ -16,12 +16,13 @@ $(call inherit-product, device/xiaomi/raphael/device.mk)
 $(call inherit-product, vendor/mist/config/common_full_phone.mk)
 
 # Gapps
-#TARGET_BUILD_GAPPS := false
+TARGET_BUILD_GAPPS := false
 
 # Boot animation
 scr_resolution := 1080
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # Exclude QCOM powerhal manifest
 TARGET_PROVIDES_POWERHAL := true
@@ -35,7 +36,7 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_CHARACTERISTICS := nosdcard
 
 # MistOS stuff
-
+MIST_MAINTAINER := Tactus
 TARGET_HAS_UDFPS := true
 EXTRA_UDFPS_ANIMATIONS := true
 
