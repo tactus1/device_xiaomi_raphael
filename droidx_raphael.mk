@@ -12,14 +12,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from raphael device
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-<<<<<<<< HEAD:lineage_raphael.mk
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
-
-# Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_raphael
-========
 # Inherit some common DroidX stuff.
 $(call inherit-product, vendor/droidx/config/common_full_phone.mk)
 
@@ -36,11 +28,9 @@ TARGET_PROVIDES_POWERHAL := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := droidx_raphael
->>>>>>>> 9d2ff12 (DX-UI Bringup):droidx_raphael.mk
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
-
 
 TARGET_DISABLE_EPPE := true
 
