@@ -64,3 +64,6 @@ ro.zram.periodic_wb_delay_hours=24
 
 # Zygote
 persist.device_config.runtime_native.usap_pool_enabled=false
+
+# Genesis Stuff
+ro.genesis.maintainer=Tactus
