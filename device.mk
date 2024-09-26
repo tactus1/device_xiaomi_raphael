@@ -183,8 +183,9 @@ PRODUCT_PACKAGES += \
     libyuv.vendor \
     libcamera2ndk_vendor \
     libdng_sdk.vendor \
-    libgui_vendor \
     libshim_megvii \
+    libMegviiFacepp-0.5.2 \
+    libmegface \
     libstdc++_vendor \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor \
