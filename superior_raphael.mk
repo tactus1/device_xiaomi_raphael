@@ -12,16 +12,31 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from raphael device
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Superior stuff.
+$(call inherit-product, vendor/superior/config/common_full_phone.mk)
 
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_raphael
+PRODUCT_NAME := superior_raphael
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
+# Maintainer Flag (one word only/no spacing)
+MAINTAINER := Tactus
+
+# Charging Animation
+TARGET_INCLUDE_PIXEL_CHARGER := true
+
+# Disable/Enable Blur Support, default is false
+TARGET_ENABLE_BLUR := true
+
+# UDFPS Stuff
+SUPERIOR_UDFPS_ANIMATIONS := true
+
+# Superior Prebuilts
+USE_QUICKPIC := true
+USE_DUCKDUCKGO := true
 
 TARGET_DISABLE_EPPE := true
 
