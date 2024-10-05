@@ -13,7 +13,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
 # Inherit some common Superior stuff.
-$(call inherit-product, vendor/superior/config/common_full_phone.mk)
+$(call inherit-product, vendor/superior/config/common.mk)
 
 
 # Device identifier. This must come after all inclusions.
@@ -21,6 +21,9 @@ PRODUCT_NAME := superior_raphael
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
+
+# Bootanimation Resolution
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # Maintainer Flag (one word only/no spacing)
 MAINTAINER := Tactus
