@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_raphael.mk
+    $(LOCAL_DIR)/genesis_raphael.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_raphael-user \
-    lineage_raphael-userdebug \
-    lineage_raphael-eng
+    genesis_raphael-user \
+    genesis_raphael-userdebug \
+    genesis_raphael-eng
