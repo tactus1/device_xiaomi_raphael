@@ -22,6 +22,8 @@ PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
+# GenesisOS Stuff 
+GENESIS_MAINTAINER := Tactus
 
 TARGET_DISABLE_EPPE := true
 
