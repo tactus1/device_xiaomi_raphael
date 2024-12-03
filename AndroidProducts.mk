@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/yaap_raphael.mk
+    $(LOCAL_DIR)/genesis_raphael.mk
 
 COMMON_LUNCH_CHOICES := \
-    yaap_raphael-user \
-    yaap_raphael-userdebug \
-    yaap_raphael-eng
+    genesis_raphael-user \
+    genesis_raphael-userdebug \
+    genesis_raphael-eng
