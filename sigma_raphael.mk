@@ -12,16 +12,27 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from raphael device
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Sigma stuff.
+$(call inherit-product, vendor/sigma/config/common_full_phone.mk)
 
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_raphael
+PRODUCT_NAME := sigma_raphael
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
+# Google
+WITH_GMS := true
+WITH_GAPPS := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_SUPPORTS_CALL_RECORDING =: true
+
+# Sigma Stuff
+SIGMA_BUILD_TYPE := UNOFFICIAL
+SIGMA_MAINTAINER := Tactus
+TARGET_HAS_UDFPS := true
+TARGET_ENABLE_BLUR := true
 
 TARGET_DISABLE_EPPE := true
 
