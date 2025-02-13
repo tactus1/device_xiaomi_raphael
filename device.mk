@@ -601,6 +601,9 @@ PRODUCT_PACKAGES += \
 # Update
 AB_OTA_UPDATER := false
 
+# UFFD GCAdd commentMore actions
+OVERRIDE_ENABLE_UFFD_GC := false
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service.dual_role_usb \
