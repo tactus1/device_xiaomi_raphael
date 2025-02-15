@@ -203,8 +203,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     vendor.qti.hardware.memtrack-service \
-    gralloc.msmnile \
-    hwcomposer.msmnile \
+    gralloc.qcom \
+    hwcomposer.qcom \
     libtinyxml \
     libdisplayconfig.qti \
     libdisplayconfig.system.qti \
@@ -239,6 +239,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
     android.hardware.drm-service.clearkey
+
+# DisplayFeatures
+PRODUCT_PACKAGES += \
+    DisplayFeatures \
+    DisplayFeaturesRaphael
 
 # F2FS
 PRODUCT_PACKAGES += \
