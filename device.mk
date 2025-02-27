@@ -56,6 +56,14 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/xiaomi
 
+# Variant Properties
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,odm.*.prop,$(LOCAL_PATH)/configs/props/,$(TARGET_COPY_OUT_ODM)) \
+    $(call find-copy-subdir-files,product.*.prop,$(LOCAL_PATH)/configs/props/,$(TARGET_COPY_OUT_PRODUCT)) \
+    $(call find-copy-subdir-files,system.*.prop,$(LOCAL_PATH)/configs/props/,$(TARGET_COPY_OUT_SYSTEM)) \
+    $(call find-copy-subdir-files,system_ext.*.prop,$(LOCAL_PATH)/configs/props/,$(TARGET_COPY_OUT_SYSTEM_EXT)) \
+    $(call find-copy-subdir-files,vendor.*.prop,$(LOCAL_PATH)/configs/props/,$(TARGET_COPY_OUT_VENDOR))
+
 # IncrementalFS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.incremental.enable=yes
@@ -322,6 +330,23 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
+# Init
+PRODUCT_PACKAGES += \
+    fstab.qcom_ramdisk \
+    fstab.qcom \
+    fstab.zram
+
+PRODUCT_PACKAGES += \
+    init.power.rc \
+    init.qcom.rc \
+    init.qcom.sh \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    init.recovery.qcom.rc \
+    init.target.rc \
+    init.xiaomi.rc \
+    ueventd.qcom.rc
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl \
@@ -377,13 +402,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
-    $(LOCAL_PATH)/configs/media/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_ODM)/etc/media_profiles_V1_0.xml \
     $(LOCAL_PATH)/configs/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
-
-    $(call inherit-product-if-exists, hardware/qcom-caf/sm8150/media/product.mk)
 
 # Properties
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
@@ -441,6 +466,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.se.omapi.uicc.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/com.android.nfc_extras.xml
 
+<<<<<<< HEAD
 # OMX
 PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-service \
@@ -460,14 +486,14 @@ PRODUCT_PACKAGES += \
     libstagefright_omx.vendor \
     libstagefright_softomx_plugin.vendor
 
+=======
+>>>>>>> 7277c10 (raphael: Remove OMX)
 # QDCM
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/qdcm_calib_data_samsung_ea8076_fhd_cmd_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_samsung_ea8076_fhd_cmd_dsi_panel.xml \
     $(LOCAL_PATH)/configs/etc/qdcm_calib_data_visionox_r66456_fhd_cmd_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_visionox_r66456_fhd_cmd_dsi_panel.xml \
     $(LOCAL_PATH)/configs/etc/sdr_config.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/sdr_config.cfg \
     $(LOCAL_PATH)/configs/etc/hdr_config.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/hdr_config.cfg
-
-
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -547,23 +573,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.5.vendor \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0.vendor
-
-# Rootdir
-PRODUCT_PACKAGES += \
-    fstab.qcom_ramdisk \
-    fstab.qcom \
-    fstab.zram
-
-PRODUCT_PACKAGES += \
-    init.power.rc \
-    init.qcom.rc \
-    init.qcom.sh \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh \
-    init.recovery.qcom.rc \
-    init.target.rc \
-    init.xiaomi.rc \
-    ueventd.qcom.rc
 
 # Seccomp
 PRODUCT_COPY_FILES += \
@@ -687,7 +696,17 @@ PRODUCT_COPY_FILES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
+    libavservices_minijail \
+    libnl \
     libpng.vendor
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    debug.sf.enable_hwc_vds=0 \
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0
 
 # Enable zygote critical window.
 PRODUCT_PROPERTY_OVERRIDES += \
