@@ -15,14 +15,14 @@ TARGET_SUPPORTS_OMX_SERVICE := false
 # Inherit from raphael device
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common YAAP stuff.
-$(call inherit-product, vendor/yaap/config/common_full_phone.mk)
+# Inherit some common BlissROMS stuff.
+$(call inherit-product, vendor/bliss/config/common_full_phone.mk)
 
 # Gapps
 #TARGET_BUILD_GAPPS := true
 
 # Boot animation
-scr_resolution := 1080
+TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
@@ -30,7 +30,7 @@ TARGET_SCREEN_WIDTH := 1080
 TARGET_PROVIDES_POWERHAL := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := yaap_raphael
+PRODUCT_NAME := bliss_raphael
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
