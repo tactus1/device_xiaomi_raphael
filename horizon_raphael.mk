@@ -15,16 +15,19 @@ TARGET_SUPPORTS_OMX_SERVICE := false
 # Inherit from raphael device
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common HorizonDroid stuff.
+$(call inherit-product, vendor/horizon/config/common_full_phone.mk)
 
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_raphael
+PRODUCT_NAME := horizon_raphael
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
+# Horizon Stuff
+HORIZON_MAINTAINER := Tactus
+WITH_GMS := true
 
 TARGET_DISABLE_EPPE := true
 
