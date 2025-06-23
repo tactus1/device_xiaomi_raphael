@@ -15,16 +15,34 @@ TARGET_SUPPORTS_OMX_SERVICE := false
 # Inherit from raphael device
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common YAAP stuff.
-$(call inherit-product, vendor/yaap/config/common_full_phone.mk)
-
-# Gapps
-#TARGET_BUILD_GAPPS := true
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Boot animation
 scr_resolution := 1080
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
+
+# Rising
+PRODUCT_BUILD_PROP_OVERRIDES += \
+ 	RisingChipset="Snapdragon 855" \
+ 	RisingMaintainer="Tactus"
+
+# Blur
+TARGET_ENABLE_BLUR := true
+
+# Launchers
+#TARGET_DEFAULT_PIXEL_LAUNCHER := true
+#TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+
+# Extra stuff
+TARGET_PREBUILT_BCR := true
+
+#Camera
+.TARGET_PREBUILT_GOOGLE_CAMERA := true
+ 		
+# Gapps
+WITH_GMS := true
 
 # Exclude QCOM powerhal manifest
 TARGET_PROVIDES_POWERHAL := true
