@@ -38,8 +38,8 @@ TARGET_ENABLE_BLUR := true
 # Extra stuff
 TARGET_PREBUILT_BCR := true
 
-#Camera
-.TARGET_PREBUILT_GOOGLE_CAMERA := true
+# Camera
+TARGET_PREBUILT_GOOGLE_CAMERA := true
  		
 # Gapps
 WITH_GMS := true
@@ -48,7 +48,7 @@ WITH_GMS := true
 TARGET_PROVIDES_POWERHAL := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := yaap_raphael
+PRODUCT_NAME := lineage_raphael
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
