@@ -205,6 +205,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.postproc@1.0.vendor \
     vendor.xiaomi.hardware.motor@1.0.vendor
 
+$(call soong_config_set,camera,override_format_from_reserved,true)
+$(call soong_config_set,libcameraservice,ext_lib,libcameraservice_extension.raphael)
+
 # MiuiCamera
 $(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
 
@@ -239,6 +242,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@4.0.vendor \
     vendor.qti.hardware.display.mapperextensions@1.1.vendor
 
+$(call soong_config_set,qtidisplay,gralloc_handle_has_reserved_size,true)
 $(call soong_config_set,qtimedia,disabled_ubwc,true)
 
 PRODUCT_PACKAGES += \
