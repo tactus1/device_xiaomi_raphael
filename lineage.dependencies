@@ -1,0 +1,14 @@
+[
+  {
+    "repository": "SOVIET-ANDROID/device_xiaomi_raphael-kernel",
+    "target_path": "device/xiaomi/raphael-kernel"
+  },
+  {
+    "repository": "SOVIET-ANDROID/vendor_xiaomi_raphael",
+    "target_path": "vendor/xiaomi/raphael"
+  },
+  {
+    "repository": "hardware_xiaomi",
+    "target_path": "hardware/xiaomi"
+  }
+]

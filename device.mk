@@ -39,6 +39,8 @@ PRODUCT_PACKAGES += \
     SystemUIResRaphael \
     TelephonyResCommon \
     TetheringConfigOverlay \
+    LineageSDKOverlay \
+    LineageDialerOverlay \
     WifiOverlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
@@ -250,11 +252,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
     android.hardware.drm-service.clearkey
-
-# DisplayFeatures
-PRODUCT_PACKAGES += \
-    DisplayFeatures \
-    DisplayFeaturesRaphael
 
 # F2FS
 PRODUCT_PACKAGES += \
